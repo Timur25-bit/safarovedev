@@ -10,12 +10,12 @@ export const useFilterCategories = () => {
     get() {
       return parseSegments(route.params?.subcategory as string[] || []).filters
     },
-    set(value) {
+    async set(value) {
       const filterIndex = paramsSubcategories.value?.indexOf('filter')
       const resFilters = filterIndex >= 0
         ? [...paramsSubcategories.value.slice(0, filterIndex + 1), ...value]
         : [...paramsSubcategories.value, 'filter', ...value]
-      router.replace({
+      await router.replace({
         name: 'catalog-category-subcategory',
         params: {
           subcategory: value.length ? resFilters : paramsSubcategories.value.slice(0, filterIndex)
@@ -30,11 +30,11 @@ export const useFilterCategories = () => {
     get() {
       return parseSegments(route.params?.subcategory as string[] || []).subcategories
     },
-    set(value) {
+    async set(value) {
       const filterIndex = paramsSubcategories.value?.indexOf('filter')
       const resFilter = filterIndex >= 0 ? paramsSubcategories.value.slice(filterIndex) : []
 
-      router.replace({
+      await router.replace({
         name: 'catalog-category-subcategory',
         params: {
           subcategory: [...value, ...resFilter].filter(item => item !== 'apply')
@@ -43,9 +43,9 @@ export const useFilterCategories = () => {
     }
   })
 
-  const onApply = () => {
+  const onApply = async () => {
     const resParams = [...paramsSubcategories.value, 'apply']
-    router.replace({ params: { subcategory: resParams } })
+    await router.replace({ params: { subcategory: resParams } })
   }
 
   return {
