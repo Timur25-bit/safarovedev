@@ -1,0 +1,1 @@
+import{_ as e,J as n,C as _,y as a,D as c}from"./Bo9dkVDs.js";import{_ as r}from"./Bn8b-BiY.js";const s={};function f(p,o){const t=r;return a(),n(t,{color:"secondary","no-caps":"",to:"/catalog"},{default:_(()=>o[0]||(o[0]=[c(" Catalog ")])),_:1,__:[0]})}const m=e(s,[["render",f]]);export{m as default};

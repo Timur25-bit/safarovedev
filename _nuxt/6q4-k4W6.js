@@ -1,0 +1,1 @@
+import{_ as e,J as n,C as r,y as _,D as a}from"./Bo9dkVDs.js";import{_ as c}from"./Bn8b-BiY.js";const s={};function f(p,o){const t=c;return _(),n(t,{color:"secondary","no-caps":"",to:"/catalog/category"},{default:r(()=>o[0]||(o[0]=[a(" Category ")])),_:1,__:[0]})}const x=e(s,[["render",f]]);export{x as default};
